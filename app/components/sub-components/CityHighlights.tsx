@@ -86,7 +86,7 @@ const CityHighlights = () => {
   const citiesRef = useRef(city);
 
   return (
-    <div className="container px-3 mx-auto">
+    <div className="container px-4 sm:px-4 md:px-10 lg:px-44 mx-auto">
       <h1 className="mt-12 font-bold text-center sm:mt-20 md:mt-30 sm:text-lg md:text-2xl lg:text-2xl text-slate-900">
         City Highlights
       </h1>

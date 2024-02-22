@@ -95,7 +95,7 @@ const NewsCarousel = () => {
   const newsRef = useRef(news);
 
   return (
-    <div className="container px-4 mx-auto">
+    <div className="container px-4 sm:px-4 md:px-10 lg:px-44 mx-auto">
       {/* large screens */}
       <div className="hidden sm:hidden md:block lg:block">
         <Swiper
