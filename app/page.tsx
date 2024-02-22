@@ -1,13 +1,8 @@
 import axios from "axios";
 import React from "react";
-import Fetcher from "./components/Fetcher";
 
 const Home = () => {
-  return (
-    <div>
-      <Fetcher />
-    </div>
-  );
+  return <div>Home</div>;
 };
 
 export default Home;

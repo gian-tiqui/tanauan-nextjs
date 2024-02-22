@@ -1,7 +1,9 @@
 "use client";
+
 import { ChangeEvent, useContext, useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import { useSpring, animated } from "@react-spring/web";
+import Image from "next/image";
+import Link from "next/link";
 
 const linkClass = "mx-5 my-auto text-lg hover:underline text-sm text-white";
 const linkClass2 = "mx-5 my-auto text-lg hover:underline text-white text-sm";
@@ -90,6 +92,14 @@ const Navbar = () => {
       <div className="hidden sm:relative md:relative lg:relative sm:hidden md:block lg:block">
         <div className="flex justify-between py-2">
           <div className="flex">
+            <Image
+              src="/logo.png"
+              width={100}
+              height={50}
+              onContextMenu={(e) => e.preventDefault()}
+              draggable="false"
+              alt="Logo"
+            />
             <h2 className="my-auto text-2xl">TANAUAN</h2>
           </div>
           <div className="flex justify-between">
@@ -183,6 +193,14 @@ const Navbar = () => {
       <div className="block sm:block md:hidden lg:hidden">
         <div className="flex justify-between flex-1 py-2">
           <div className="flex items-center flex-1">
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              className="w-16 h-13"
+              width={100}
+              height={50}
+              onContextMenu={(e) => e.preventDefault()}
+            />
             <h2 className="text-sm font-bold">TANAUAN</h2>
           </div>
           <div className="flex justify-center">
@@ -199,7 +217,17 @@ const Navbar = () => {
           <div
             className="flex items-center justify-end flex-1"
             onClick={handleToggleSidebar}
-          ></div>
+          >
+            <Image
+              onClick={handleToggleSidebar}
+              width={100}
+              height={50}
+              onContextMenu={(e) => e.preventDefault()}
+              src="https://cdn-icons-png.flaticon.com/128/4254/4254068.png"
+              className="w-10 h-8 px-2 py-1 mr-8 font-bold text-white border border-black rounded"
+              alt="hi"
+            />
+          </div>
         </div>
       </div>
 
@@ -210,6 +238,14 @@ const Navbar = () => {
         >
           <div className="flex flex-col justify-center gap-3">
             <div className="flex items-center py-2 bg-white">
+              <Image
+                src="/logo.png"
+                className="w-16 h-13"
+                alt="Logo"
+                width={100}
+                height={50}
+                onContextMenu={(e) => e.preventDefault()}
+              />
               <h2 className="text-sm font-bold">TANAUAN</h2>
             </div>
             <div
