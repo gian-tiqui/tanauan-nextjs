@@ -93,9 +93,10 @@ const Navbar = () => {
         <div className="flex justify-between py-2">
           <div className="flex">
             <Image
+              className=""
               src="/logo.png"
-              width={100}
-              height={50}
+              width={50}
+              height={100}
               onContextMenu={(e) => e.preventDefault()}
               draggable="false"
               alt="Logo"
