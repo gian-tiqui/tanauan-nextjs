@@ -1,7 +1,7 @@
 import React from "react";
 
 const Tourism = () => {
-  return <div>Tourism</div>;
+  return <div>hi</div>;
 };
 
 export default Tourism;

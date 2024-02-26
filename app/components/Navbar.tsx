@@ -199,7 +199,7 @@ const Navbar = () => {
               alt="Logo"
               className="w-16 h-13"
               width={100}
-              height={50}
+              height={100}
               onContextMenu={(e) => e.preventDefault()}
             />
             <h2 className="text-sm font-bold">TANAUAN</h2>
