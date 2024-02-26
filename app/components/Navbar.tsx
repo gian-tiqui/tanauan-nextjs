@@ -5,13 +5,65 @@ import { useSpring, animated } from "@react-spring/web";
 import Image from "next/image";
 import Link from "next/link";
 
-const linkClass = "mx-5 my-auto text-lg hover:underline text-sm text-white";
-const linkClass2 = "mx-5 my-auto text-lg hover:underline text-white text-sm";
-
 interface ComponentNavs {
   componentId: string;
   componentTitle: string;
 }
+
+interface RouteMaps {
+  path: string;
+  content: string;
+}
+
+const routeMapsTop: RouteMaps[] = [
+  {
+    path: "/",
+    content: "HOME",
+  },
+  {
+    path: "/city",
+    content: "THE CITY",
+  },
+  {
+    path: "/tourism",
+    content: "TOURISM",
+  },
+  {
+    path: "/careers",
+    content: "CAREERS",
+  },
+];
+
+const routeMapsBottom: RouteMaps[] = [
+  {
+    path: "/government",
+    content: "Government",
+  },
+  {
+    path: "city-transactions",
+    content: "City Transactions",
+  },
+  {
+    path: "business",
+    content: "Business",
+  },
+  {
+    path: "transparency-report",
+    content: "Transparency Report",
+  },
+  {
+    path: "news-events",
+    content: "News & Events",
+  },
+  {
+    path: "departments",
+    content: "Departments",
+  },
+  {
+    path: "online-services",
+    content: "Online Services",
+  },
+];
 
 const componentIds: ComponentNavs[] = [
   {
@@ -93,7 +145,7 @@ const Navbar = () => {
         <div className="flex justify-between py-2">
           <div className="flex">
             <Image
-              className=""
+              className="mx-5 my-auto lg:text-lg hover:underline text-sm text-white"
               src="/logo.png"
               width={50}
               height={100}
@@ -104,30 +156,16 @@ const Navbar = () => {
             <h2 className="my-auto text-2xl">TANAUAN</h2>
           </div>
           <div className="flex justify-between">
-            <Link href={"/"} className={linkClass} style={{ color: "#786649" }}>
-              HOME
-            </Link>
-            <Link
-              href={"/city"}
-              className={linkClass}
-              style={{ color: "#786649" }}
-            >
-              THE CITY
-            </Link>
-            <Link
-              href={"/tourism"}
-              className={linkClass}
-              style={{ color: "#786649" }}
-            >
-              TOURISM
-            </Link>
-            <Link
-              href={"/careers"}
-              className={linkClass}
-              style={{ color: "#786649" }}
-            >
-              CAREERS
-            </Link>
+            {routeMapsTop.map((routeMap, index) => (
+              <Link
+                key={index}
+                href={routeMap.path}
+                className="mx-5 my-auto lg:text-lg hover:underline text-sm text-white"
+                style={{ color: "#786649" }}
+              >
+                {routeMap.content}
+              </Link>
+            ))}
           </div>
           <div className="pr-5 my-auto" ref={inputRef}>
             <input
@@ -164,27 +202,15 @@ const Navbar = () => {
           style={{ backgroundColor: "#023F78" }}
         >
           <div className="flex justify-between">
-            <Link href={"/"} className={linkClass2}>
-              Government
-            </Link>
-            <Link href={"/"} className={linkClass2}>
-              City Transactions
-            </Link>
-            <Link href={"/"} className={linkClass2}>
-              Business
-            </Link>
-            <Link href={"/"} className={linkClass2}>
-              Transparency Report
-            </Link>
-            <Link href={"/"} className={linkClass2}>
-              News & Events
-            </Link>
-            <Link href={"/"} className={linkClass2}>
-              Departments
-            </Link>
-            <Link href={"/"} className={linkClass2}>
-              Online Services
-            </Link>
+            {routeMapsBottom.map((routeMap, index) => (
+              <Link
+                key={index}
+                href={routeMap.path}
+                className="mx-5 my-auto text-white lg:text-lg hover:underline text-sm"
+              >
+                {routeMap.content}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
@@ -255,46 +281,25 @@ const Navbar = () => {
             >
               <p className="px-2 mr-4 font-bold text-white border rounded">x</p>
             </div>
-            <Link href={"/"} className="mx-5 font-bold text-white text-md">
-              Home
-            </Link>
-            <Link href={"/city"} className="mx-5 font-bold text-white text-md">
-              City
-            </Link>
-            <Link
-              href={"/tourism"}
-              className="mx-5 font-bold text-white text-md"
-            >
-              Tourism
-            </Link>
-            <Link
-              href={"/careers"}
-              className="mx-5 font-bold text-white text-md"
-            >
-              Careers
-            </Link>
+            {routeMapsTop.map((routeMap, index) => (
+              <Link
+                key={index}
+                href={routeMap.path}
+                className="mx-5 my-auto lg:text-lg hover:underline text-sm text-white"
+              >
+                {routeMap.content}
+              </Link>
+            ))}
             <hr className="mx-3 my-2 bg-white" />
-            <Link href={"/"} className="mx-5 font-bold text-white text-md">
-              Government
-            </Link>
-            <Link href={"/"} className="mx-5 font-bold text-white text-md">
-              City Transactions
-            </Link>
-            <Link href={"/"} className="mx-5 font-bold text-white text-md">
-              Business
-            </Link>
-            <Link href={"/"} className="mx-5 font-bold text-white text-md">
-              Transparency Report
-            </Link>
-            <Link href={"/"} className="mx-5 font-bold text-white text-md">
-              News & Events
-            </Link>
-            <Link href={"/"} className="mx-5 font-bold text-white text-md">
-              Departments
-            </Link>
-            <Link href={"/"} className="mx-5 font-bold text-white text-md">
-              Online Services
-            </Link>
+            {routeMapsBottom.map((routeMap, index) => (
+              <Link
+                key={index}
+                href={routeMap.path}
+                className="mx-5 my-auto lg:text-lg hover:underline text-white text-sm"
+              >
+                {routeMap.content}
+              </Link>
+            ))}
           </div>
         </animated.div>
       )}
