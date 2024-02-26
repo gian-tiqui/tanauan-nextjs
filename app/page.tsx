@@ -88,7 +88,6 @@ const news = [
 const Home = () => {
   return (
     <div className="static w-full h-full">
-      zz
       <div id="video-header">
         <VideoHeader />
       </div>
