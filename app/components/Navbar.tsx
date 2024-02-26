@@ -88,7 +88,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav>
+    <nav className="bg-white">
       <div className="hidden sm:relative md:relative lg:relative sm:hidden md:block lg:block">
         <div className="flex justify-between py-2">
           <div className="flex">

@@ -42,9 +42,6 @@ const Home = () => {
       <div id="city-highlights">
         <CityHighlights />
       </div>
-      <div id="footer">
-        <Footer />
-      </div>
     </div>
   );
 };
